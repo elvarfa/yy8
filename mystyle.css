@@ -1,4 +1,13 @@
-body {
+	body {
 	background-color: black;
 	color: white;
-}
+	}
+	
+	.table {
+		color: black;
+		line-height: 0.3;
+	}
+	
+	.maps{
+		max-width: 400px;
+	}
