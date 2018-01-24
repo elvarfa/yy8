@@ -645,44 +645,59 @@
   </tbody>
 </table>
 </div>
-<button type="button"
+<button class="btn btn-success" type="button"
 onclick="myFunction()
 ">
 Sjá seðil til að afrita.</button>
 </div>
 <div>
-<p id="demo"></p>
+<br>
+<p class="pbold" id="demo"> </p>
 <p>Eftir að hafa gert seðilinn sendu þeim sem þú ætlar að styrkja!</p>
 <h3>Verðlaun</h3>
 <p><b>1.sæti</b> IphoneX - 167.990kr</p>
+<p><b>'Ásamt fullt af fleiri vinningum!</b></p>
 </div>
 	<script>
 	function myFunction(){
-	var sedill = 'Gerðu seðil!';
+	var sedill = '';
+	var vantar = '';
+	var skodari = 0;
 	
-	if (document.getElementById('Leikur1a').checked){sedill = "Seðillinn minn er: 1,";
+	if (document.getElementById('Leikur1a').checked){sedill = "<b>Seðillinn minn er: 1,"; skodari = 1;
 	}
-	if (document.getElementById('Leikur1b').checked){sedill = "Seðillinn minn er: X,";
+	if (document.getElementById('Leikur1b').checked){sedill = "<b>Seðillinn minn er: X,"; skodari = 1;
 	}
-	if (document.getElementById('Leikur1c').checked){sedill = "Seðillinn minn er: 2,";
+	if (document.getElementById('Leikur1c').checked){sedill = "<b>Seðillinn minn er: 2,"; skodari = 1;
 	}
+	if (skodari==0){vantar = vantar + " 1 "}
+
 	
 	for (i = 2; i < 20; i++)
 	{
-		if (document.getElementById('Leikur'+i+'a').checked){sedill = sedill + "1,";
+		skodari = 0;
+		if (document.getElementById('Leikur'+i+'a').checked){sedill = sedill + "1,"; skodari=1;
 	}
-	if (document.getElementById('Leikur'+i+'b').checked){sedill = sedill + "X,";
+	if (document.getElementById('Leikur'+i+'b').checked){sedill = sedill + "X,"; skodari=1;
 	}
-	if (document.getElementById('Leikur'+i+'c').checked){sedill = sedill + "2,";
+	if (document.getElementById('Leikur'+i+'c').checked){sedill = sedill + "2,"; skodari=1;
 	}
-	}
+	if (skodari==0){vantar = vantar + " "+i+" "}
 	
-	if (document.getElementById('Leikur20a').checked){sedill = sedill +  "1.";
 	}
-	if (document.getElementById('Leikur20b').checked){sedill = sedill +  "X.";
+	skodari = 0;
+	
+	if (document.getElementById('Leikur20a').checked){sedill = sedill +  "1.</b>"; skodari=1;
 	}
-	if (document.getElementById('Leikur20c').checked){sedill = sedill +  "2.";
+	if (document.getElementById('Leikur20b').checked){sedill = sedill +  "X.</b>"; skodari=1;
 	}
+	if (document.getElementById('Leikur20c').checked){sedill = sedill +  "2.</b>"; skodari=1;
+	}
+	if (skodari==0){vantar = vantar + " 20 "}
+	
+	if (vantar!=''){sedill = 'Vantar leiki NR: ' + vantar }
+	
+	if (sedill=='') {sedill = 'Gerðu seðil!'}
 	
 	document.getElementById('demo').innerHTML = sedill;
 	}
