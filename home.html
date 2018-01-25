@@ -649,6 +649,10 @@
 onclick="myFunction()
 ">
 Sjá seðil til að afrita.</button>
+<button class="btn btn-success" type="button"
+onclick="random()
+">
+Random</button>
 </div>
 <div>
 <br>
@@ -664,51 +668,7 @@ Sjá seðil til að afrita.</button>
 <p><b>Vinningar munum vera að bætast við að drætti. Þessi síða mun verða uppfærð reglulega.</b></p>
 <p><b>Reglur:</b> Sá sem giskar á flesta rétta leiki fær fyrsta vinning og svo koll af kolli. Vinningar munu skiptast eftir verðmæti. Ef 2 eru saman í fyrsta sæti verður dregið hver endar ofar.</p>
 </div>
-	<script>
-	function myFunction(){
-	var sedill = '';
-	var vantar = '';
-	var skodari = 0;
-	
-	if (document.getElementById('Leikur1a').checked){sedill = "<b>Seðillinn minn er: 1,"; skodari = 1;
-	}
-	if (document.getElementById('Leikur1b').checked){sedill = "<b>Seðillinn minn er: X,"; skodari = 1;
-	}
-	if (document.getElementById('Leikur1c').checked){sedill = "<b>Seðillinn minn er: 2,"; skodari = 1;
-	}
-	if (skodari==0){vantar = vantar + " 1 "}
 
-	
-	for (i = 2; i < 20; i++)
-	{
-		skodari = 0;
-		if (document.getElementById('Leikur'+i+'a').checked){sedill = sedill + "1,"; skodari=1;
-	}
-	if (document.getElementById('Leikur'+i+'b').checked){sedill = sedill + "X,"; skodari=1;
-	}
-	if (document.getElementById('Leikur'+i+'c').checked){sedill = sedill + "2,"; skodari=1;
-	}
-	if (skodari==0){vantar = vantar + " "+i+" "}
-	
-	}
-	skodari = 0;
-	
-	if (document.getElementById('Leikur20a').checked){sedill = sedill +  "1.</b>"; skodari=1;
-	}
-	if (document.getElementById('Leikur20b').checked){sedill = sedill +  "X.</b>"; skodari=1;
-	}
-	if (document.getElementById('Leikur20c').checked){sedill = sedill +  "2.</b>"; skodari=1;
-	}
-	if (skodari==0){vantar = vantar + " 20 "}
-	
-	if (vantar!=''){sedill = 'Vantar leiki NR: ' + vantar }
-	
-	if (sedill=='') {sedill = 'Gerðu seðil!'}
-	
-	document.getElementById('demo').innerHTML = sedill;
-	}
-
-	</script>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -717,6 +677,7 @@ Sjá seðil til að afrita.</button>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
 	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 	<script src="javascripts/jquery-2.2.0.js"></script>
+	<script src="myjavascript.js"></script>
 	
 </body>
 </html>
