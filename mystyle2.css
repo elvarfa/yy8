@@ -3,6 +3,7 @@
 	.body {
 		padding: 0 0 0 0;
 		line-height: 1;
+		background-color: #FFA500;
 	}
 
 	.tline {
@@ -10,6 +11,9 @@
 		vertical-align: center;
 	}
 	
+	.table{
+		background-color: white;
+	}
 	.table td{
 		
 		padding: 0 0 0 0;
